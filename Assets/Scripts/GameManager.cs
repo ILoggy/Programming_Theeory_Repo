@@ -391,23 +391,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //POWERUP USE
-    public void UseGem()
-    {
-        Debug.Log("Gem_PowerUp used");
-
-        foreach (GameObject p in packages)
-        {
-            Destroy(p);
-            points += 100;
-        }
-
-        foreach (GameObject pg in packageGoals)
-        {
-            Destroy(pg);
-        }
-    }
-
     public void UseRadioactive()
     {
         Debug.Log("Radioactive_PowerUp used");

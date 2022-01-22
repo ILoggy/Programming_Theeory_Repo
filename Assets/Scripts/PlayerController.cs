@@ -29,6 +29,12 @@ public class PlayerController : MonoBehaviour
 
     public bool playKeyboard;
 
+    //PowerUps
+    Gem Gem;
+    Radioactive Radioactive;
+    GoldCuplcon GoldCuplcon;
+    Power Power;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -205,7 +211,7 @@ public class PlayerController : MonoBehaviour
         {
             if (hasGem && Input.GetKeyDown(KeyCode.E))
             {
-                gameManager.UseGem();
+                Gem.Use();
                 hasGem = false;
             }
 
@@ -231,7 +237,7 @@ public class PlayerController : MonoBehaviour
         {
             if (hasGem && Input.GetKeyDown(KeyCode.Joystick1Button3))
             {
-                gameManager.UseGem();
+                Gem.Use();
                 hasGem = false;
             }
 
