@@ -11,13 +11,13 @@ public class Package : MonoBehaviour
 
     public GameObject playerModel;
 
-    private GameManager gameManager;
+    private GameManager GameManager;
     // Start is called before the first frame update
     void Start()
     {
         packageRb = GetComponent<Rigidbody>();
         playerModel = GameObject.Find("Player Model");
-        gameManager = FindObjectOfType<GameManager>();
+        GameManager = FindObjectOfType<GameManager>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -36,7 +36,7 @@ public class Package : MonoBehaviour
         {
             Destroy(gameObject);
             Destroy(other.gameObject);
-            gameManager.points += 100;
+            GameManager.SetPointsValue(100);
         }
     }
 }

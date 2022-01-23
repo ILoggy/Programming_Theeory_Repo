@@ -45,18 +45,22 @@ public class PlayerController : MonoBehaviour
 
         if (canJump)
         {
+            //ABSTRACTION
             Movement();
         }
 
         if (playKeyboard && Input.GetKeyDown(KeyCode.E))
         {
+            //ABSTRACTION
             PowerUpUseKB();
         }
         else if (!playKeyboard && Input.GetKeyDown(KeyCode.Joystick1Button3))
         {
+            //ABSTRACTION
             PowerUpUseJS();
         }
-            
+
+        //ABSTRACTION
         PunchUse();
         KickUse();
         Jump();
