@@ -53,8 +53,17 @@ public class PlayerController : MonoBehaviour
         if (canJump)
         {
             Movement();
-        }        
-        PowerUpUse();
+        }
+
+        if (playKeyboard && Input.GetKeyDown(KeyCode.E))
+        {
+            PowerUpUseKB();
+        }
+        else if (!playKeyboard && Input.GetKeyDown(KeyCode.Joystick1Button3))
+        {
+            PowerUpUseJS();
+        }
+            
         PunchUse();
         KickUse();
         Jump();
@@ -169,9 +178,7 @@ public class PlayerController : MonoBehaviour
     {
         canPunch = false;
         punchBox.SetActive(true);
-        //Debug.Log("Punch used");
         yield return new WaitForSeconds(1);
-        //Debug.Log("Punch can be used");
         punchBox.SetActive(false);
         canPunch = true;
     }
@@ -198,68 +205,64 @@ public class PlayerController : MonoBehaviour
     {
         canKick = false;
         kickBox.SetActive(true);
-        //Debug.Log("Kick used");
         yield return new WaitForSeconds(1);
-        //Debug.Log("Kick can be used");
         kickBox.SetActive(false);
         canKick = true;
     }
 
-    private void PowerUpUse()
+    private void PowerUpUseKB()
     {
-        if (playKeyboard)
+        GameObject PowerUpManager = FindObjectOfType<PowerUp>().gameObject;
+        if (hasGem)
         {
-            if (hasGem && Input.GetKeyDown(KeyCode.E))
-            {
-                Gem.Use();
-                hasGem = false;
-            }
-
-            if (hasGoldCuplcon && Input.GetKeyDown(KeyCode.E))
-            {
-                gameManager.UseGoldCuplcon();
-                hasGoldCuplcon = false;
-            }
-
-            if (hasPower && Input.GetKeyDown(KeyCode.E))
-            {
-                gameManager.UsePower();
-                hasPower = false;
-            }
-
-            if (hasRadioactive && Input.GetKeyDown(KeyCode.E))
-            {
-                gameManager.UseRadioactive();
-                hasRadioactive = false;
-            }
+            PowerUpManager.GetComponent<Gem>().Use();
+            hasGem = false;
         }
-        else
+
+        if (hasGoldCuplcon)
         {
-            if (hasGem && Input.GetKeyDown(KeyCode.Joystick1Button3))
-            {
-                Gem.Use();
-                hasGem = false;
-            }
-
-            if (hasGoldCuplcon && Input.GetKeyDown(KeyCode.Joystick1Button3))
-            {
-                gameManager.UseGoldCuplcon();
-                hasGoldCuplcon = false;
-            }
-
-            if (hasPower && Input.GetKeyDown(KeyCode.Joystick1Button3))
-            {
-                gameManager.UsePower();
-                hasPower = false;
-            }
-
-            if (hasRadioactive && Input.GetKeyDown(KeyCode.Joystick1Button3))
-            {
-                gameManager.UseRadioactive();
-                hasRadioactive = false;
-            }
+            gameManager.UseGoldCuplcon();
+            hasGoldCuplcon = false;
         }
-        
+
+        if (hasPower)
+        {
+            gameManager.UsePower();
+            hasPower = false;
+        }
+
+        if (hasRadioactive)
+        {
+            gameManager.UseRadioactive();
+            hasRadioactive = false;
+        }
+    }
+
+    private void PowerUpUseJS()
+    {
+        if (hasGem)
+        {
+            Gem.Use();
+            hasGem = false;
+        }
+
+        if (hasGoldCuplcon)
+        {
+            gameManager.UseGoldCuplcon();
+            hasGoldCuplcon = false;
+        }
+
+        if (hasPower)
+        {
+            gameManager.UsePower();
+            hasPower = false;
+        }
+
+        if (hasRadioactive)
+        {
+            gameManager.UseRadioactive();
+            hasRadioactive = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -267,7 +270,7 @@ public class PlayerController : MonoBehaviour
         
         if (other.gameObject.CompareTag("PowerUp"))
         {
-            if (other.gameObject.GetComponent<PowerUp>().isGoldCuplcon)
+            if (other.gameObject.GetComponent<GoldCuplcon>())
             {
                 hasGoldCuplcon = true;
                 Destroy(other.gameObject);
@@ -276,7 +279,7 @@ public class PlayerController : MonoBehaviour
                 hasRadioactive = false;
             }
 
-            if (other.gameObject.GetComponent<PowerUp>().isGem)
+            if (other.gameObject.GetComponent<Gem>())
             {
                 hasGem = true;
                 Destroy(other.gameObject);
@@ -285,7 +288,7 @@ public class PlayerController : MonoBehaviour
                 hasRadioactive = false;
             }
 
-            if (other.gameObject.GetComponent<PowerUp>().isPower)
+            if (other.gameObject.GetComponent<Power>())
             {
                 hasPower = true;
                 Destroy(other.gameObject);
@@ -294,7 +297,7 @@ public class PlayerController : MonoBehaviour
                 hasRadioactive = false;
             }
 
-            if (other.gameObject.GetComponent<PowerUp>().isRadioactive)
+            if (other.gameObject.GetComponent<Radioactive>())
             {
                 hasRadioactive = true;
                 Destroy(other.gameObject);

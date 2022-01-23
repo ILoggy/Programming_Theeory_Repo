@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3363052}
   - component: {fileID: 2358098}
   - component: {fileID: -5900284894044945042}
-  - component: {fileID: 3409015393735757981}
+  - component: {fileID: 8297409044447796286}
   m_Layer: 0
   m_Name: GoldCupIcon
   m_TagString: PowerUp
@@ -96,7 +96,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8895569, y: 1.2499233, z: 0.20007595}
   m_Center: {x: 0, y: -0.000000059604645, z: 0.0000000037252903}
---- !u!114 &3409015393735757981
+--- !u!114 &8297409044447796286
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,10 +105,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 173560}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d280961146915264baa2878a0e8f407b, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b2ab2956d1e1f94f9bc4be9d0f1e1e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isGem: 0
-  isRadioactive: 0
-  isPower: 0
-  isGoldCuplcon: 1

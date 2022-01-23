@@ -105,15 +105,15 @@ public class GameManager : MonoBehaviour
         {
             
 
-            //InvokeRepeating("EnemyRandomSpawn", delay, repeatEnemyTime);         //invoke "method_name" with rate "repeatTime", and delay for the first activate
-            //InvokeRepeating("PowerUpRandomSpawn", delay, repeatPowerUpTime);        //invoke "method_name" with rate "repeatTime", and delay for the first activate
-            //InvokeRepeating("NPCRandomSpawn", delay, repeatNPCTime);                //invoke "method_name" with rate "repeatTime", and delay for the first activate
-            //InvokeRepeating("PackageRandomSpawn", delay, repeatPackageTime);        //invoke "method_name" with rate "repeatTime", and delay for the first activate
-            //InvokeRepeating("PackageGoalRandomSpawn", delay, repeatPackageGoalTime);
-            //InvokeRepeating("Score", 0.5f, 0.5f);
-            //InvokeRepeating("EnemyLeftCounter", 0.5f, 0.5f);
-            //InvokeRepeating("TimeInGame", 0.5f, 1);
-            //firstAwake = false;
+            InvokeRepeating("EnemyRandomSpawn", delay, repeatEnemyTime);         //invoke "method_name" with rate "repeatTime", and delay for the first activate
+            InvokeRepeating("PowerUpRandomSpawn", delay, repeatPowerUpTime);        //invoke "method_name" with rate "repeatTime", and delay for the first activate
+            InvokeRepeating("NPCRandomSpawn", delay, repeatNPCTime);                //invoke "method_name" with rate "repeatTime", and delay for the first activate
+            InvokeRepeating("PackageRandomSpawn", delay, repeatPackageTime);        //invoke "method_name" with rate "repeatTime", and delay for the first activate
+            InvokeRepeating("PackageGoalRandomSpawn", delay, repeatPackageGoalTime);
+            InvokeRepeating("Score", 0.5f, 0.5f);
+            InvokeRepeating("EnemyLeftCounter", 0.5f, 0.5f);
+            InvokeRepeating("TimeInGame", 0.5f, 1);
+            firstAwake = false;
         }
     }
 

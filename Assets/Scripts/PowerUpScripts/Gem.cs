@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Gem : PowerUp
 {
+
     public override void Rotation()
     {
         base.Rotation();
@@ -15,8 +16,8 @@ public class Gem : PowerUp
 
         foreach (GameObject p in  packages)
         {
-            Destroy(p);
-            points += 100;
+            GameManager.points += 100;
+            Destroy(p);            
         }
 
         foreach (GameObject pg in packageGoals)
