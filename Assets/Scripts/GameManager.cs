@@ -391,22 +391,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void UseRadioactive()
-    {
-        Debug.Log("Radioactive_PowerUp used");
-        points += 10;
-
-        foreach (GameObject e in enemys)
-        {
-            Destroy(e);
-        }
-
-        foreach (GameObject n in npcs)
-        {
-            Destroy(n);
-        }
-    }
-
     public void UsePower()
     {
         points += 10;

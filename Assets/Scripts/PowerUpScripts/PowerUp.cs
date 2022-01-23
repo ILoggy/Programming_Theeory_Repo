@@ -14,6 +14,8 @@ public class PowerUp : MonoBehaviour
     public GameManager GameManager;
     public GameObject[] packages;
     public GameObject[] packageGoals;
+    public GameObject[] enemys;
+    public GameObject[] npcs;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,8 @@ public class PowerUp : MonoBehaviour
     {
         packages = GameManager.packages;
         packageGoals = GameManager.packageGoals;
+        enemys = GameManager.enemys;
+        npcs = GameManager.npcs;
     }
 
     public virtual void Use(){ }

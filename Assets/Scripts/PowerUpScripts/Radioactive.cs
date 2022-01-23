@@ -2,17 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Radioactive : MonoBehaviour
+public class Radioactive : PowerUp
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Rotation()
     {
-        
+        base.Rotation();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Use()
     {
-        
+        Debug.Log("Radioactive_PowerUp used");
+        GameManager.points += 10;
+
+        foreach (GameObject e in enemys)
+        {
+            Destroy(e);
+        }
+
+        foreach (GameObject n in npcs)
+        {
+            Destroy(n);
+        }
     }
 }

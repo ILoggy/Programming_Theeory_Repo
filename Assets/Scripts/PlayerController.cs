@@ -233,16 +233,17 @@ public class PlayerController : MonoBehaviour
 
         if (hasRadioactive)
         {
-            gameManager.UseRadioactive();
+            PowerUpManager.GetComponent<Radioactive>().Use();
             hasRadioactive = false;
         }
     }
 
     private void PowerUpUseJS()
     {
+        GameObject PowerUpManager = FindObjectOfType<PowerUp>().gameObject;
         if (hasGem)
         {
-            Gem.Use();
+            PowerUpManager.GetComponent<Gem>().Use();
             hasGem = false;
         }
 
@@ -260,7 +261,7 @@ public class PlayerController : MonoBehaviour
 
         if (hasRadioactive)
         {
-            gameManager.UseRadioactive();
+            PowerUpManager.GetComponent<Radioactive>().Use();
             hasRadioactive = false;
         }
     }
