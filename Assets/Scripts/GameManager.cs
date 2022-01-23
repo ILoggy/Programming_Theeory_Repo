@@ -57,7 +57,11 @@ public class GameManager : MonoBehaviour
     //UI LEFT CORNER
     public GameObject LUCornerPanel;
 
-    public float points;
+    //ENCAPSULATION
+    private float points;
+    public float GetPoints {get { return points; } }
+    public float SetPoints {set { points = value; } }
+
     private float timer;
 
     public TextMeshProUGUI scoreText;
@@ -142,7 +146,7 @@ public class GameManager : MonoBehaviour
 
         if (isGameActive == true)
         {
-            points += 2 * Time.deltaTime;
+            points  += 2 * Time.deltaTime;
 
             if (enemys.Length >= 6)              //check is amount of enemys above the limit
             {
@@ -395,5 +399,11 @@ public class GameManager : MonoBehaviour
     {
         timeInGameCounter += 1.0f;
         timeInGame.text = "Time In Game: " + timeInGameCounter + " second";
+    }
+
+    public float SetPointsValue(float i)
+    {
+        points += i;
+        return points;
     }
 }

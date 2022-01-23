@@ -12,7 +12,7 @@ public class Power : PowerUp
     public override void Use()
     {
         Debug.Log("Power_PowerUp used");
-        GameManager.points += 10;
+        GameManager.SetPointsValue(10);
         StartCoroutine("PowerTimer");
     }
 

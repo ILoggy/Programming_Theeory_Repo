@@ -13,7 +13,7 @@ public class Radioactive : PowerUp
     public override void Use()
     {
         Debug.Log("Radioactive_PowerUp used");
-        GameManager.points += 10;
+        GameManager.SetPointsValue(10);
 
         foreach (GameObject e in enemys)
         {

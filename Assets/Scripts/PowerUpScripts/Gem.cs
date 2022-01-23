@@ -17,7 +17,7 @@ public class Gem : PowerUp
 
         foreach (GameObject p in  packages)
         {
-            GameManager.points += 100;
+            GameManager.SetPointsValue(100);
             Destroy(p);            
         }
 
