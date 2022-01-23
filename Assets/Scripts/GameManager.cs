@@ -398,11 +398,6 @@ public class GameManager : MonoBehaviour
         StartCoroutine("PowerTimer");
     }
 
-    public void UseGoldCuplcon()
-    {
-        points += 1500;
-    }
-
     IEnumerator PowerTimer()
     {
         player.velocity *= 2;

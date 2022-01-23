@@ -221,7 +221,7 @@ public class PlayerController : MonoBehaviour
 
         if (hasGoldCuplcon)
         {
-            gameManager.UseGoldCuplcon();
+            PowerUpManager.GetComponent<GoldCuplcon>().Use();
             hasGoldCuplcon = false;
         }
 
@@ -249,7 +249,7 @@ public class PlayerController : MonoBehaviour
 
         if (hasGoldCuplcon)
         {
-            gameManager.UseGoldCuplcon();
+            PowerUpManager.GetComponent<GoldCuplcon>().Use();
             hasGoldCuplcon = false;
         }
 

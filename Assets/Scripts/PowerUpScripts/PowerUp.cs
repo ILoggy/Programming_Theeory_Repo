@@ -9,7 +9,7 @@ public class PowerUp : MonoBehaviour
     //public bool isPower;
     //public bool isGoldCuplcon;
 
-    private float rotSpeed = 180.0f;
+    public float rotSpeed = 180.0f;
 
     public GameManager GameManager;
     public GameObject[] packages;
@@ -28,6 +28,7 @@ public class PowerUp : MonoBehaviour
         packageGoals = GameManager.packageGoals;
         enemys = GameManager.enemys;
         npcs = GameManager.npcs;
+        Rotation();
     }
 
     public virtual void Use(){ }

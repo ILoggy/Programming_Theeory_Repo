@@ -2,17 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoldCuplcon : MonoBehaviour
+public class GoldCuplcon : PowerUp
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Rotation()
     {
-        
+        base.Rotation();
     }
-
-    // Update is called once per frame
-    void Update()
+    public override void Use()
     {
-        
+        GameManager.points += 1500;
     }
 }
