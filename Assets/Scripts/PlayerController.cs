@@ -29,18 +29,11 @@ public class PlayerController : MonoBehaviour
 
     public bool playKeyboard;
 
-    //PowerUps
-    Gem Gem;
-    Radioactive Radioactive;
-    GoldCuplcon GoldCuplcon;
-    Power Power;
-
     // Start is called before the first frame update
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
         focalPoint = GameObject.Find("Focial Point");
-        
 
         gameManager = GameObject.FindObjectOfType<GameManager>();
     }
@@ -212,7 +205,7 @@ public class PlayerController : MonoBehaviour
 
     private void PowerUpUseKB()
     {
-        GameObject PowerUpManager = FindObjectOfType<PowerUp>().gameObject;
+        GameObject PowerUpManager = GameObject.Find("PowerUpManager");
         if (hasGem)
         {
             PowerUpManager.GetComponent<Gem>().Use();
@@ -227,7 +220,7 @@ public class PlayerController : MonoBehaviour
 
         if (hasPower)
         {
-            gameManager.UsePower();
+            PowerUpManager.GetComponent<Power>().Use();
             hasPower = false;
         }
 
@@ -240,7 +233,7 @@ public class PlayerController : MonoBehaviour
 
     private void PowerUpUseJS()
     {
-        GameObject PowerUpManager = FindObjectOfType<PowerUp>().gameObject;
+        GameObject PowerUpManager = GameObject.Find("PowerUpManager");
         if (hasGem)
         {
             PowerUpManager.GetComponent<Gem>().Use();
@@ -255,7 +248,7 @@ public class PlayerController : MonoBehaviour
 
         if (hasPower)
         {
-            gameManager.UsePower();
+            PowerUpManager.GetComponent<Power>().Use();
             hasPower = false;
         }
 

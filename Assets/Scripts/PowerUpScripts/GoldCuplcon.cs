@@ -10,6 +10,7 @@ public class GoldCuplcon : PowerUp
     }
     public override void Use()
     {
+        Debug.Log("GoldCuplcon_PowerUp used");
         GameManager.points += 1500;
     }
 }

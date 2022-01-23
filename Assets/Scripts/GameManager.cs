@@ -391,20 +391,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void UsePower()
-    {
-        points += 10;
-        Debug.Log("Power_PowerUp used");
-        StartCoroutine("PowerTimer");
-    }
-
-    IEnumerator PowerTimer()
-    {
-        player.velocity *= 2;
-        yield return new WaitForSeconds(3);
-        player.velocity /= 2;
-    }
-
     private void TimeInGame()
     {
         timeInGameCounter += 1.0f;

@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Power : MonoBehaviour
+public class Power : PowerUp
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Rotation()
     {
-        
+        base.Rotation();
+    }
+    public override void Use()
+    {
+        Debug.Log("Power_PowerUp used");
+        GameManager.points += 10;
+        StartCoroutine("PowerTimer");
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator PowerTimer()
     {
-        
+        GameManager.player.velocity *= 2;
+        yield return new WaitForSeconds(3);
+        GameManager.player.velocity /= 2;
     }
 }
