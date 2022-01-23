@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Power : PowerUp
 {
+    //POLYMORHISM
     public override void Rotation()
     {
         base.Rotation();

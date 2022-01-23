@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Radioactive : PowerUp
 {
+    //POLYMORHISM
     public override void Rotation()
     {
         base.Rotation();

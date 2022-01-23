@@ -203,6 +203,8 @@ public class PlayerController : MonoBehaviour
         canKick = true;
     }
 
+    //INHERITANCE AND POLYMORHISM
+    //uses USE() from power-ups scripts which is overrided method of parrent class PowerUpScript
     private void PowerUpUseKB()
     {
         GameObject PowerUpManager = GameObject.Find("PowerUpManager");

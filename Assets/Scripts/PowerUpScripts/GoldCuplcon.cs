@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GoldCuplcon : PowerUp
 {
+    //POLYMORHISM
     public override void Rotation()
     {
         base.Rotation();
